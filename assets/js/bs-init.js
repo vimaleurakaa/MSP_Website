@@ -1,21 +1,11 @@
+//Page loader
 $(window).on("load", function () {
   $("#covers").fadeOut(600);
 });
 
-
+//Footer
 $(document).ready(function () {
-  $("[data-bs-hover-animate]")
-    .mouseenter(function () {
-      var elem = $(this);
-      elem.addClass("animated " + elem.attr("data-bs-hover-animate"));
-    })
-    .mouseleave(function () {
-      var elem = $(this);
-      elem.removeClass("animated " + elem.attr("data-bs-hover-animate"));
-    });
-
-  //Footer
-  document.getElementById('footer_en').innerHTML += `
+  document.getElementById("footer_en").innerHTML += `
 <div class="footer-dark" style="margin-top: 0;">
 <footer>
     <div class="container">
@@ -53,21 +43,5 @@ $(document).ready(function () {
         <p class="copyright">MyStreetPrayer © 2020-21</p>
     </div>
 </footer>
-</div>`
-});
-
-
-$(document).ready(function () {
-  //English Lang Switcher
-  document.getElementById('lang_select_en').innerHTML +=
-    `<option value = "index.html" selected = "english" > English  </option>
-     <option value = "ta_index.html" > Tamil </option>`
-});
-
-$(document).ready(function () {
-  //Tamil Lang Switcher
-  let eng = document.getElementById('lang_select_ta').innerHTML +=
-    `<option value = "ta_index.html" selected = "tamil" > Tamil</option>  
-<option value = "index.html" > English </option>`
-
+</div>`;
 });
