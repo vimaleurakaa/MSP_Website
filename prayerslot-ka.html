@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <title>MSP_Website</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/css/BebasNeue-Bold.css">
+    <link rel="stylesheet" href="assets/css/BebasNeue-Light.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:400,700">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ionicons/2.0.1/css/ionicons.min.css">
+    <link rel="stylesheet" href="assets/css/Contact-Form-Clean.css">
+    <link rel="stylesheet" href="assets/css/Footer-Dark.css">
+    <link rel="stylesheet" href="assets/css/styles.css">
+</head>
+
+<body style="font-family: Roboto, sans-serif;">
+    <div id="covers"></div>
+    <nav class="navbar navbar-light navbar-expand-md navigation-clean" style="background: #ffa000;">
+        <div class="container">
+            <p class="text-left" style="font-family: BebasNeue-Bold;font-size: 22px;margin: 0;color: rgb(255,255,255);">
+                Change Language<br></p><button data-toggle="collapse" class="navbar-toggler"
+                data-target="#navcol-1"><span class="sr-only">Toggle navigation</span><span
+                    class="navbar-toggler-icon"></span></button>
+            <div class="collapse navbar-collapse" id="navcol-1">
+                <ul class="nav navbar-nav ml-auto">
+                    <li class="nav-item"><a class="nav-link " href="prayer-slot.html">English</a></li>
+                    <li class="nav-item"><a class="nav-link " href="prayerslot-ta.html">தமிழ்<br></a></li>
+                    <li class="nav-item"><a class="nav-link active" href="prayerslot-ka.html">ಕನ್ನಡ<br></a></li>
+                    <li class="nav-item"><a class="nav-link" href="prayerslot-hi.html">हिन्दी<br></a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="page-title-request">
+        <p>Prayer Requests</p>
+    </div>
+    <div>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <div style="margin:20px; "></div>
+                    <!-- Data prase from JSON -->
+                    <div class="card" style="margin-bottom: 100px;">
+                        <ul id="prayer-request" class="list-group list-group-flush" style="cursor: pointer;">
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.2/js/bootstrap.bundle.min.js">
+        </script>
+        <script src="assets/js/bs-init.js"></script>
+
+        <script>
+            var myUrl =
+                "https://spreadsheets.google.com/feeds/list/1cS-bhGa5R3jeDi3uivJg2UCEC-0oBj9Wp2ltarjNkXA/1/public/values?alt=json";
+
+            $.ajax({
+                url: myUrl,
+                dataType: 'json',
+                async: false,
+                success: function (data) {
+                    var sheetData = data.feed.entry;
+                    var i;
+                    for (i = 0; i < sheetData.length; i++) {
+                        let request = data.feed.entry[i]['gsx$_cpzh4']['$t'];
+
+                        if (request.indexOf('$') === 0) {
+                            let replaceText = request.replace("$", "");
+                            document.getElementById('prayer-request').innerHTML +=
+                                (`<li class="list-group-item list-title">` + replaceText + `</li>`)
+                        } else {
+                            document.getElementById('prayer-request').innerHTML +=
+                                ('<li class="list-group-item">' + request + '</li>')
+                        }
+                    }
+                }
+            });
+        </script>
+</body>
+
+</html>

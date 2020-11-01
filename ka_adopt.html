@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html style="background-color: #ffffff;">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <title>MSP_Website</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/css/BebasNeue-Bold.css">
+    <link rel="stylesheet" href="assets/css/BebasNeue-Light.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:400,700">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ionicons/2.0.1/css/ionicons.min.css">
+    <link rel="stylesheet" href="assets/css/Contact-Form-Clean.css">
+    <link rel="stylesheet" href="assets/css/Footer-Dark.css">
+    <link rel="stylesheet" href="assets/css/styles.css">
+
+</head>
+
+<body>
+    <div id="covers"></div>
+    <nav class="navbar navbar-light navbar-expand-md sticky-top shadow-sm"
+        style="background-color: #dab135;/*height: 76px;*/">
+        <div class="container-fluid"><a class="navbar-brand" href="ka_index.html"><img style="height: 40px;"
+                    src="assets/img/logo_black-2000x425.png"></a><button data-toggle="collapse" class="navbar-toggler"
+                data-target="#navcol-1" type="button" aria-controls="navcol-1" aria-expanded="false"
+                aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
+            <div class="collapse navbar-collapse" id="navcol-1">
+                <ul class="nav navbar-nav ml-auto">
+                    <li class="nav-item"><a class="nav-link " href="ka_index.html" style="font-weight: 500;">Home</a>
+                    </li>
+                    <li class="nav-item"><a class="nav-link" href="ka_prayer.html"
+                            style="font-family: Roboto, sans-serif;font-weight: 500;;">Prayer</a></li>
+                    <li class="nav-item"><a class="nav-link active" href="ka_adopt.html"
+                            style="font-family: Roboto, sans-serif;font-weight: 500;;">Adopt</a></li>
+                    <li class="nav-item"><a class="nav-link " href="ka_resources.html"
+                            style="font-family: Roboto, sans-serif;font-weight: 500;">Resources</a></li>
+                    <li class="nav-item"><a class="nav-link" href="prayer-slot.html"
+                            style="font-family: Roboto, sans-serif;font-weight: 500;">Prayer Request</a></li>
+                    <select id="lang_select_ta" class="nav-item lang-select" onchange="location = this.value"></select>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div style="background: url(&quot;assets/img/form_banner.jpg&quot;) center / cover no-repeat;">
+        <div class="container">
+            <div class="row" style="padding: 15px;">
+                <div class="col-sm-6">
+                    <div>
+                        <p
+                            style="color: #ffda5b;font-family: Roboto, sans-serif;font-size: 20px;font-weight: bold;padding: 20px;padding-bottom: 10px;padding-right: 10px;">
+                            ಸಾವಿರ ಮೈಲು ಪಯಣವು ಮೊದಲನೆ ಹೆಜ್ಜೆಯಿಂದ ಪ್ರಾರಂಭವಾಗುತ್ತದೆ. ಈ ರೀತಿ ನೀವು ಆರಂಭಿಸಬಹುದು :</p>
+                        <ul style="color: rgb(255,255,255);">
+                            <li>ಸಂಪರ್ಕಿಸುವ ಹೆಸರು, ವಿಳಾಸವನ್ನು ಸಹಿಯೊಂದಿಗೆ ನಮಗೆ ತಲುಪಿಸಿರಿ.</li>
+                            <li>ನೀವು ಪ್ರಾರ್ಥಿಸುವ ಬೀದಿ ಹಾಗೂ ಸ್ಥಳವನ್ನು ನಮೂದಿಸಿರಿ.</li>
+                            <li>ನಿಮ್ಮ ಮನೆಯಿಂದಲೆ ಪ್ರಾರ್ಥಿಸಲು ಸಮಯವನ್ನು ನಿಗದಿ ಪಡಿಸಿರಿ.</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-sm-6 align-padding">
+                    <!-- Thank You UI -->
+                    <div id="adopt_thankyou" class="jumbotron text-center" style="display: none;">
+                        <h1 class="display-3">Thank You!</h1>
+                        <p class="lead"><strong>We have recieved your request</strong> will contact you as soon as
+                            possible.</p>
+
+                        <hr>
+                        <p>
+                            Don't wait until then, Start Praying.
+                        </p>
+                        <p>God is Listening.</p>
+                        <p class="lead">
+                            <a class="btn btn-primary btn-sm" href="./index.html" role="button">Continue to homepage</a>
+                        </p>
+                    </div>
+
+
+                    <!-- Form UI -->
+                    <form id="adoptForm" method="POST"
+                        action="https://docs.google.com/forms/u/3/d/e/1FAIpQLSfp2zv0eB5gE5rVlVITq7NE9dVA4tbU-oiQ_0k_CWDZXF7MIw/formResponse"
+                        style="background: #eeeeee;padding: 30px;" target="no-target" onsubmit="return validate_form()"
+                        name="adopt_form">
+                        <h2 class="text-center" style="font-family: BebasNeue-Bold;font-size: 30px;">ದತ್ತು ತೆಗೆದುಕೊಳ್ಳಿರಿ !</h2>
+                        <div class="form-group"><input class="form-control" type="text" name="entry.999101202"
+                                placeholder="Name" required=""></div>
+                        <div class="form-group">
+                            <input class="form-control" type="email" name="entry.249332080" placeholder="Email"></div>
+                        <div class="col-sm-12" style="margin: 0;padding: 0;">
+                            <div class="form-group form-multicolumn"
+                                style="padding: 0;display: inline-block;padding-right: 0;margin-right: 20px;"><input
+                                    class="form-control" type="tel" name="entry.1838866170" placeholder="Mobile No"
+                                    required=""></div>
+                            <div class="form-group form-multicolumn" style="padding: 0;display: inline-block;">
+
+                                <select id="select1" class="form-control">
+                                    <option value="male">Male</option>
+                                    <option value="female">Female</option>
+                                </select>
+                                <input class="gender" type="hidden" name="entry.2113219745">
+
+                            </div>
+                        </div>
+
+                        <div class="form-group"><input class="form-control" type="text" name="entry.301464342"
+                                placeholder="Address" required=""></div>
+                        <div class="form-group"><input class="form-control" type="text" name="entry.2131325940"
+                                placeholder="Church Name"></div>
+                        <div class="form-group"><textarea class="form-control" name="entry.498096259"
+                                placeholder="Message" rows="6"></textarea></div>
+                        <div class="form-group text-center">
+                            <button class="btn btn-primary" type="submit" onclick="getOption()">Send </button>
+                        </div>
+                    </form>
+                    <iframe src="#" name="no-target" style="visibility: hidden;"></iframe>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div style="background: #dab123;padding: 2px;">
+        <div class="container">
+            <div class="row" style="margin-top: 30px;margin-bottom: 30px;">
+                <div class="col-sm-6 d-xl-flex">
+                    <div><i class="fa fa-star fa-quote-left" style="font-size: 28px;color: #403222;"></i>
+                        <p style="font-family: Roboto, sans-serif;font-size: 18px;padding: 12px;padding-left: 0px;">
+                            ಮನಸ್ಸಿಗೆ  ಸರಿ ತೋಚಿದಾಗ ಪ್ರಾರ್ಥಿಸಬೇಡಿರಿ. ಕರ್ತನೊಂದಿಗೆ ಸಮಯವನ್ನು ನಿಯೋಜಿಸಿ (ನಿಶ್ಚಯಿಸಿ) ಪ್ರಾರ್ಥನೆಯನ್ನು ಸಲ್ಲಿಸಿರಿ. ಮನುಷ್ಯ ಮೊಣಕಾಲುಗಳ ಮೇಲೆ ಬಲವುಳ್ಳವನಾಗಿದ್ದಾನೆ/ದ್ದಾಳೆ</p><span
+                            class="d-flex d-sm-flex justify-content-end justify-content-sm-end"
+                            style="font-family: Roboto, sans-serif;font-weight: 600;margin-right: 20px;">ಕೊರಿ ಟೆನ್ ಭೂಮ್
+                        </span>
+                    </div>
+                </div>
+                <div class="col-sm-6 border-display">
+                    <div>
+                        <p style="font-family: Roboto, sans-serif;font-size: 15px;padding: 12px;">ಇಂದು ನೀವು ಆತನ ಧ್ವನಿಯನ್ನು ಕೇಳಿದರೆ, ನಿಮ್ಮ ಹೃದಯವನ್ನು ಕಠಿಣಗೊಳಿಸಬೇಡಿ. ಒಡಕ್ಕಿನಲ್ಲಿ ನಿಲ್ಲುವ ಕರೆಗೆ ಉತ್ತರಿಸಿ. ಪ್ರಾರ್ಥನೆ ಮಾಡಲು ನಿಮ್ಮ ಬೀದಿಯನ್ನು ದತ್ತು ತೆಗೆದುಕೊಳ್ಳಿರಿ. ಪ್ರತಿ ವಿಶ್ವಾಸಿಯು ಈ ಸವಾಲನ್ನು ತೆಗೆದುಕೊಂಡು ಅವರ ಬೀದಿಗಾಗಿ ಪ್ರಾರ್ಥಿಸಿದರೆ ಊಹಿಸಿರಿ ಅಲ್ಲಿ ಪರಿವರ್ತನೆ ಇರುತ್ತದೆ. ಪುನಃಸ್ಥಾಪನೆ ಇರುತ್ತದೆ. ಭೂಮಿಯನ್ನು ಗುಣಪಡಿಸುವುದು.<br><br>ನಿಮ್ಮ ಬೀದಿಯಲ್ಲಿ ಮತ್ತು ನಂತರ ನಿಮ್ಮ ನಗರದಲ್ಲಿ ಶಾಂತಿಗಾಗಿ ಪ್ರಾರ್ಥಿಸಿ.
+                            &nbsp; &nbsp;-&nbsp; &nbsp;<strong>Jer 29:7</strong></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container" style="padding: 40px;">
+        <div class="row">
+            <div class="col" style="padding: 0;margin: 0;">
+                <div>
+                    <p class="text-center" style="font-family: BebasNeue-Bold;font-size: 16px;margin: 0;"> ಸಾವಿರ ಮೈಲು ಪಯಣವು ಮೊದಲನೆ ಹೆಜ್ಜೆಯಿಂದ ಪ್ರಾರಂಭವಾಗುತ್ತದೆ. ಈ ರೀತಿ ನೀವು ಆರಂಭಿಸಬಹುದು
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- footer inject -->
+    <div id="footer_en"></div>
+
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.2/js/bootstrap.bundle.min.js"></script>
+    <script src="assets/js/bs-init.js"></script>
+
+    <script>
+        function getOption() {
+            selectElement = document.querySelector('#select1');
+            output =
+                selectElement.options[selectElement.selectedIndex].value;
+            document.querySelector('.gender').value = output;
+        }
+
+        function validate_form() {
+            let name = document.forms["adopt_form"]["entry.999101202"].value;
+            let mobile = document.forms["adopt_form"]["entry.1838866170"].value;
+            let churchName = document.forms["adopt_form"]["entry.2131325940"].value;
+            let address = document.forms["adopt_form"]["entry.301464342"].value;
+
+            if (name == "") {
+                alert("Please Enter your Name")
+                return false;
+            } else if (mobile == "") {
+                alert("Please Enter Your Mobile Number")
+                return false;
+            } else if (churchName == "") {
+                alert("Please provide your Church Name")
+                return false;
+            } else if (address == "") {
+                alert("Please provide your City / Area")
+                return false;
+            } else {
+                document.getElementById("adoptForm").style.display = "none";
+                document.getElementById("adopt_thankyou").style.display = "block";
+                return true;
+            }
+        }
+    </script>
+
+
+</body>
+
+</html>
