@@ -27,19 +27,39 @@
         <div class="container">
             <div class="row" style="padding: 15px;">
                 <div class="col align-padding">
-                    <form method="post" style="background: #eeeeee;padding: 30px;">
+
+                    <!-- Thank You UI -->
+                    <div id="request_thankyou" class="jumbotron text-center" style="display: none;">
+                        <h1 class="display-3">Thank You!</h1>
+                        <p class="lead"><strong>We have recieved your request</strong> will contact you as soon as
+                            possible.</p>
+
+                        <hr>
+                        <p>
+                            Don't wait until then, Start Praying.
+                        </p>
+                        <p>God is Listening.</p>
+                
+                    </div>
+
+
+                    <form id="requestForm" method="POST" action="https://docs.google.com/forms/u/0/d/e/1FAIpQLScIInIMRPj2DHTSfEB3VJXd8UqvKtB6czJgKN1MpPGq-s7q-Q/formResponse" style="background: #eeeeee;padding: 30px;" target="no-target" onsubmit="return validate_form()">
                         <h2 class="text-center" style="font-family: BebasNeue-Bold;font-size: 15px;margin: 0;"><br>1 Thessalonians 5:16-18 Rejoice always, pray continually, give thanks in all circumstances;<br>for this is God’s will for you in Jesus Christ.<br><br></h2>
-                        <div class="form-group"><input class="form-control" type="text" name="name" placeholder="Name" required=""></div>
-                        <div class="form-group"><input class="form-control" type="email" name="email" placeholder="Email"></div>
+                        <div class="form-group">
+                            <input class="form-control" type="text" name="entry.1975558813" placeholder="Name" required=""></div>
+                        <div class="form-group">
+                            <input class="form-control" type="email" name="entry.721628028" placeholder="Email"></div>
                         <div class="col-sm-12" style="margin: 0;padding: 0;">
-                            <div class="form-group form-multicolumn" style="padding: 0;display: inline-block;padding-right: 0;margin-right: 20px;"><input class="form-control" type="tel" name="mobile" placeholder="Mobile No" required=""></div>
+                            <div class="form-group form-multicolumn" style="padding: 0;display: inline-block;padding-right: 0;margin-right: 20px;">
+                                <input class="form-control" type="tel" name="entry.585123990" placeholder="Mobile No" required=""></div>
                             <div class="form-group form-multicolumn" style="padding: 0;display: inline-block;"><select class="form-control"><option value="12" selected="">Male</option><option value="undefined">Female</option></select></div>
                         </div>
-                        <div class="form-group"><input class="form-control" type="text" name="address" placeholder="City / Address" required=""></div>
-                        <div class="form-group"><input class="form-control" type="text" name="church" placeholder="Church Name" required=""></div>
-                        <div class="form-group"><textarea class="form-control" name="message" placeholder="Your Prayer Request" rows="6" required=""></textarea></div>
+                        <div class="form-group"><input class="form-control" type="text" name="entry.1594038049" placeholder="City / Address" ></div>
+                        <div class="form-group"><input class="form-control" type="text" name="entry.197641181" placeholder="Church Name" required=""></div>
+                        <div class="form-group"><textarea class="form-control" name="entry.1070066468" placeholder="Your Prayer Request" rows="6" required=""></textarea></div>
                         <div class="form-group text-center"><button class="btn btn-primary" type="submit">Send Prayer Request&nbsp;</button></div>
                     </form>
+                    <iframe src="#" name="no-target" style="display: none;"></iframe>
                 </div>
             </div>
         </div>
@@ -47,6 +67,14 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.2/js/bootstrap.bundle.min.js"></script>
     <script src="assets/js/bs-init.js"></script>
+    <script>
+        function validate_form() {
+            document.getElementById("requestForm").style.display = "none";
+            document.getElementById("request_thankyou").style.display = "block";
+            return true;
+        }
+    </script>
+   
 </body>
 
 </html>
